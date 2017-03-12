@@ -61,35 +61,10 @@ namespace questao2
                 Console.Write($"{numeros} ","\n");
             };
 
-            
-
-            
-            
-
-
-
-
-
-
-
+                                
             Console.ReadKey();
 
-
-
-
-
-
-
-
-
-
-
-
-
-
-
-
-
+            
         }
     }
 }
