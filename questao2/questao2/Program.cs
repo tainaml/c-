@@ -45,16 +45,35 @@ namespace questao2
                 i++;               
             }
 
-
-            for (i=0; i < a1.Length; i++)
+            
+            Console.Write("The values store into the array are: ");
+                foreach (var numeros in a1)
             {
-                Console.WriteLine($"element {i} valor armazenado pelo usuario: {a1[i]}");
-
+                Console.Write($"{numeros} " ,"\n");
             }
-           
+
+
+            Array.Reverse(a1);
+
+            Console.Write("\nThe values in reverse are: ");
+                foreach (var numeros in a1)
+            {
+                Console.Write($"{numeros} ","\n");
+            };
+
+            
+
+            
+            
+
+
+
+
+
 
 
             Console.ReadKey();
+
 
 
 
