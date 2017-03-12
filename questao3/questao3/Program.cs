@@ -29,13 +29,9 @@ namespace questao3
         {
             
             Console.WriteLine("size of the array: ");
-            int size = Convert.ToInt16(Console.ReadLine());
-
-            
-
-            
+            int size = Convert.ToInt16(Console.ReadLine());         
+           
             int[] numbers = new int[size];
-
             
             int somador = 0;
 
@@ -56,12 +52,6 @@ namespace questao3
             }
             Console.WriteLine($"Soma total: {somador}");
             Console.ReadLine();
-
-
-            
-
-
-
 
         }
     }
