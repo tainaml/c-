@@ -12,6 +12,9 @@ namespace CountLetters
 {
     public partial class Form1 : Form
     {
+        private const int maxletters = 26;
+        private const int maxchars = maxletters 1;
+        private const int lettera = 65;
         public Form1()
         {
             InitializeComponent();
