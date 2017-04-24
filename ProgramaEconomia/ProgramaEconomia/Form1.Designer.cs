@@ -44,6 +44,8 @@
             this.txtValorCredito = new System.Windows.Forms.TextBox();
             this.txtDescricao = new System.Windows.Forms.TextBox();
             this.label2 = new System.Windows.Forms.Label();
+            this.lblData = new System.Windows.Forms.Label();
+            this.mskData = new System.Windows.Forms.MaskedTextBox();
             ((System.ComponentModel.ISupportInitialize)(this.dttDebitos)).BeginInit();
             this.SuspendLayout();
             // 
@@ -64,7 +66,7 @@
             // 
             // btnSalvarDebito
             // 
-            this.btnSalvarDebito.Location = new System.Drawing.Point(493, 78);
+            this.btnSalvarDebito.Location = new System.Drawing.Point(638, 77);
             this.btnSalvarDebito.Name = "btnSalvarDebito";
             this.btnSalvarDebito.Size = new System.Drawing.Size(119, 23);
             this.btnSalvarDebito.TabIndex = 2;
@@ -145,7 +147,7 @@
             // 
             // btnSalvarCredito
             // 
-            this.btnSalvarCredito.Location = new System.Drawing.Point(493, 120);
+            this.btnSalvarCredito.Location = new System.Drawing.Point(638, 124);
             this.btnSalvarCredito.Name = "btnSalvarCredito";
             this.btnSalvarCredito.Size = new System.Drawing.Size(119, 23);
             this.btnSalvarCredito.TabIndex = 7;
@@ -162,7 +164,7 @@
             // 
             // txtDescricao
             // 
-            this.txtDescricao.Location = new System.Drawing.Point(88, 194);
+            this.txtDescricao.Location = new System.Drawing.Point(88, 204);
             this.txtDescricao.Name = "txtDescricao";
             this.txtDescricao.Size = new System.Drawing.Size(355, 20);
             this.txtDescricao.TabIndex = 9;
@@ -170,17 +172,37 @@
             // label2
             // 
             this.label2.AutoSize = true;
-            this.label2.Location = new System.Drawing.Point(14, 194);
+            this.label2.Location = new System.Drawing.Point(14, 207);
             this.label2.Name = "label2";
             this.label2.Size = new System.Drawing.Size(55, 13);
             this.label2.TabIndex = 10;
             this.label2.Text = "Descrição";
+            // 
+            // lblData
+            // 
+            this.lblData.AutoSize = true;
+            this.lblData.Location = new System.Drawing.Point(14, 174);
+            this.lblData.Name = "lblData";
+            this.lblData.Size = new System.Drawing.Size(30, 13);
+            this.lblData.TabIndex = 12;
+            this.lblData.Text = "Data";
+            // 
+            // mskData
+            // 
+            this.mskData.Location = new System.Drawing.Point(88, 174);
+            this.mskData.Mask = "00/00/0000";
+            this.mskData.Name = "mskData";
+            this.mskData.Size = new System.Drawing.Size(100, 20);
+            this.mskData.TabIndex = 13;
+            this.mskData.ValidatingType = typeof(System.DateTime);
             // 
             // Form1
             // 
             this.AutoScaleDimensions = new System.Drawing.SizeF(6F, 13F);
             this.AutoScaleMode = System.Windows.Forms.AutoScaleMode.Font;
             this.ClientSize = new System.Drawing.Size(793, 412);
+            this.Controls.Add(this.mskData);
+            this.Controls.Add(this.lblData);
             this.Controls.Add(this.label2);
             this.Controls.Add(this.txtDescricao);
             this.Controls.Add(this.txtValorCredito);
@@ -218,6 +240,8 @@
         private System.Windows.Forms.DataGridViewTextBoxColumn SubTipo;
         private System.Windows.Forms.DataGridViewTextBoxColumn Descrição;
         private System.Windows.Forms.DataGridViewTextBoxColumn Valor;
+        private System.Windows.Forms.Label lblData;
+        private System.Windows.Forms.MaskedTextBox mskData;
     }
 }
 

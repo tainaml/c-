@@ -53,6 +53,35 @@ namespace ProgramaEconomia
 
             debito.Descricao = txtDescricao.Text;
 
+            string dataInserida = mskData.Text;
+            
+            if (string.IsNullOrEmpty(dataInserida)) 
+            {
+                debito.data = DateTime.Now;
+            }
+            else
+            {
+                DateTime data;
+
+                if (DateTime.TryParse(dataInserida, out data))
+                {
+                    if (data.Date > DateTime.Now.Date)
+                    {
+                        MessageBox.Show("Data informada é superior à data atual!");
+                    }
+                    else
+                    {
+                        debito.data = data;
+                    }
+                    
+                }
+                else
+                {
+                    MessageBox.Show("Data inválida!");
+                }
+            }
+            
+
             if (cbbTipoDebito.SelectedIndex != -1)
             {
                 debito.Tipo = ((ComboBoxItem)cbbTipoDebito.SelectedValue).Text;
@@ -88,7 +117,7 @@ namespace ProgramaEconomia
                     Lista = new List<Object>();
                 }
 
-                debito.data = DateTime.Now;               
+                            
 
                 Lista.Add(debito);
 
