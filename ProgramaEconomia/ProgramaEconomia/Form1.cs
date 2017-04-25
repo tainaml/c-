@@ -55,7 +55,7 @@ namespace ProgramaEconomia
 
             string dataInserida = mskData.Text;
             
-            if (string.IsNullOrEmpty(dataInserida)) 
+            if (dataInserida == "  /  /") 
             {
                 debito.data = DateTime.Now;
             }
@@ -136,6 +136,35 @@ namespace ProgramaEconomia
             Credito credito = new Credito();
 
             credito.Descricao = txtDescricao.Text;
+
+            string dataInserida = mskData.Text;
+
+            if (dataInserida == "  /  /")
+            {
+               credito.data = DateTime.Now;
+            }
+            else
+            {
+                DateTime data;
+
+                if (DateTime.TryParse(dataInserida, out data))
+                {
+                    if (data.Date > DateTime.Now.Date)
+                    {
+                        MessageBox.Show("Data informada é superior à data atual!");
+                    }
+                    else
+                    {
+                        credito.data = data;
+                    }
+
+                }
+                else
+                {
+                    MessageBox.Show("Data inválida!");
+                }
+            }
+
 
             if (cbbTipoCredito.SelectedIndex != -1)
             {
@@ -236,7 +265,8 @@ namespace ProgramaEconomia
             dttDebitos.Rows.Add(rowfinal);
         }
 
-     
+       
+
       
     }
 }

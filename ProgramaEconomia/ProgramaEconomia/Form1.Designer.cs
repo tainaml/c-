@@ -37,6 +37,7 @@
             this.SubTipo = new System.Windows.Forms.DataGridViewTextBoxColumn();
             this.Descrição = new System.Windows.Forms.DataGridViewTextBoxColumn();
             this.Valor = new System.Windows.Forms.DataGridViewTextBoxColumn();
+            this.Excluir = new System.Windows.Forms.DataGridViewButtonColumn();
             this.cbbTipoCredito = new System.Windows.Forms.ComboBox();
             this.Debitar = new System.Windows.Forms.Label();
             this.label1 = new System.Windows.Forms.Label();
@@ -46,6 +47,8 @@
             this.label2 = new System.Windows.Forms.Label();
             this.lblData = new System.Windows.Forms.Label();
             this.mskData = new System.Windows.Forms.MaskedTextBox();
+            this.label3 = new System.Windows.Forms.Label();
+            this.label4 = new System.Windows.Forms.Label();
             ((System.ComponentModel.ISupportInitialize)(this.dttDebitos)).BeginInit();
             this.SuspendLayout();
             // 
@@ -59,7 +62,7 @@
             // 
             // txtValorDebito
             // 
-            this.txtValorDebito.Location = new System.Drawing.Point(343, 80);
+            this.txtValorDebito.Location = new System.Drawing.Point(401, 80);
             this.txtValorDebito.Name = "txtValorDebito";
             this.txtValorDebito.Size = new System.Drawing.Size(100, 20);
             this.txtValorDebito.TabIndex = 1;
@@ -82,7 +85,8 @@
             this.Tipo,
             this.SubTipo,
             this.Descrição,
-            this.Valor});
+            this.Valor,
+            this.Excluir});
             this.dttDebitos.Location = new System.Drawing.Point(17, 246);
             this.dttDebitos.Name = "dttDebitos";
             this.dttDebitos.Size = new System.Drawing.Size(717, 163);
@@ -118,6 +122,11 @@
             this.Valor.HeaderText = "Valor";
             this.Valor.Name = "Valor";
             this.Valor.ReadOnly = true;
+            // 
+            // Excluir
+            // 
+            this.Excluir.HeaderText = "Excluir";
+            this.Excluir.Name = "Excluir";
             // 
             // cbbTipoCredito
             // 
@@ -157,7 +166,7 @@
             // 
             // txtValorCredito
             // 
-            this.txtValorCredito.Location = new System.Drawing.Point(343, 122);
+            this.txtValorCredito.Location = new System.Drawing.Point(401, 126);
             this.txtValorCredito.Name = "txtValorCredito";
             this.txtValorCredito.Size = new System.Drawing.Size(100, 20);
             this.txtValorCredito.TabIndex = 8;
@@ -196,11 +205,31 @@
             this.mskData.TabIndex = 13;
             this.mskData.ValidatingType = typeof(System.DateTime);
             // 
+            // label3
+            // 
+            this.label3.AutoSize = true;
+            this.label3.Location = new System.Drawing.Point(350, 85);
+            this.label3.Name = "label3";
+            this.label3.Size = new System.Drawing.Size(31, 13);
+            this.label3.TabIndex = 14;
+            this.label3.Text = "Valor";
+            // 
+            // label4
+            // 
+            this.label4.AutoSize = true;
+            this.label4.Location = new System.Drawing.Point(350, 130);
+            this.label4.Name = "label4";
+            this.label4.Size = new System.Drawing.Size(31, 13);
+            this.label4.TabIndex = 15;
+            this.label4.Text = "Valor";
+            // 
             // Form1
             // 
             this.AutoScaleDimensions = new System.Drawing.SizeF(6F, 13F);
             this.AutoScaleMode = System.Windows.Forms.AutoScaleMode.Font;
             this.ClientSize = new System.Drawing.Size(793, 412);
+            this.Controls.Add(this.label4);
+            this.Controls.Add(this.label3);
             this.Controls.Add(this.mskData);
             this.Controls.Add(this.lblData);
             this.Controls.Add(this.label2);
@@ -235,13 +264,16 @@
         private System.Windows.Forms.TextBox txtValorCredito;
         private System.Windows.Forms.TextBox txtDescricao;
         private System.Windows.Forms.Label label2;
+        private System.Windows.Forms.Label lblData;
+        private System.Windows.Forms.MaskedTextBox mskData;
         private System.Windows.Forms.DataGridViewTextBoxColumn Data;
         private System.Windows.Forms.DataGridViewTextBoxColumn Tipo;
         private System.Windows.Forms.DataGridViewTextBoxColumn SubTipo;
         private System.Windows.Forms.DataGridViewTextBoxColumn Descrição;
         private System.Windows.Forms.DataGridViewTextBoxColumn Valor;
-        private System.Windows.Forms.Label lblData;
-        private System.Windows.Forms.MaskedTextBox mskData;
+        private System.Windows.Forms.DataGridViewButtonColumn Excluir;
+        private System.Windows.Forms.Label label3;
+        private System.Windows.Forms.Label label4;
     }
 }
 
