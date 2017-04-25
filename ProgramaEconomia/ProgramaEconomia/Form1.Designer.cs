@@ -91,6 +91,7 @@
             this.dttDebitos.Name = "dttDebitos";
             this.dttDebitos.Size = new System.Drawing.Size(717, 163);
             this.dttDebitos.TabIndex = 3;
+            this.dttDebitos.CellContentClick += new System.Windows.Forms.DataGridViewCellEventHandler(this.dataGridView1_CellContentClick);
             // 
             // Data
             // 

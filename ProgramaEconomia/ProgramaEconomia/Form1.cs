@@ -230,6 +230,7 @@ namespace ProgramaEconomia
                     row.Cells[3].Value = ((Debito)item).Descricao;
                     row.Cells[4].Value = ((Debito)item).Valor;
                     row.Cells[4].Style.BackColor = Color.Red;
+                    row.Cells[5].Value = "Excluir Débito";
                     dttDebitos.Rows.Add(row);
 
                     valorTotal -= ((Debito)item).Valor;
@@ -243,6 +244,7 @@ namespace ProgramaEconomia
                     row.Cells[3].Value = ((Credito)item).Descricao;
                     row.Cells[4].Value = ((Credito)item).Valor;
                     row.Cells[4].Style.BackColor = Color.LightBlue;
+                    row.Cells[5].Value = "Excluir Crédito";
                     dttDebitos.Rows.Add(row);
 
                     valorTotal += ((Credito)item).Valor;
@@ -252,8 +254,9 @@ namespace ProgramaEconomia
             DataGridViewRow rowfinal = (DataGridViewRow)dttDebitos.Rows[0].Clone();
             rowfinal.Cells[3].Value = "Saldo";
             rowfinal.Cells[4].Value = valorTotal;
-            
-            if(valorTotal >= 0)
+            ((DataGridViewButtonCell)rowfinal.Cells[5]). = false;  //continuar aqui
+
+            if (valorTotal >= 0)
             {
                 rowfinal.Cells[4].Style.BackColor = Color.LightBlue;
             }
@@ -265,8 +268,33 @@ namespace ProgramaEconomia
             dttDebitos.Rows.Add(rowfinal);
         }
 
-       
+        private void dataGridView1_CellContentClick(object sender, DataGridViewCellEventArgs e)
+        {
+            var senderGrid = (DataGridView)sender;
 
-      
+            if (senderGrid.Columns[e.ColumnIndex] is DataGridViewButtonColumn &&
+                e.RowIndex >= 0)
+            {
+                if (Lista != null)
+                {
+                    Object item = Lista[e.RowIndex];
+                    if (item is Credito)
+                    {
+                        Lista.Remove((Credito)item);
+                    }
+                    else
+                    {
+                        Lista.Remove((Debito)item);
+                    }
+
+                    AtualizarGridView();
+                }
+               
+            }
+        }
+
+
+
+
     }
 }
